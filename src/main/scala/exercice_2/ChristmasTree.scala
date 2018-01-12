@@ -12,7 +12,14 @@ case class Leaf(decoration: Option[Decoration]) extends Tree
 object ChristmasTree {
 
   def computePrice(tree: Tree): Int = {
-    ???
+    tree match {
+      case Leaf(None) => 0
+      case Leaf(Some(decoration: Decoration)) => decoration.price
+      case Branch(None, None) => 0
+      case Branch(Some(left), None) => computePrice(left)
+      case Branch(None, Some(right)) => computePrice(right)
+      case Branch(Some(left), Some(right)) => computePrice(left) + computePrice(right)
+    }
   }
 
   val barrenTree: Tree =

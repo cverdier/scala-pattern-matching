@@ -8,7 +8,12 @@ object Basics {
     * Match exactly city names in 'knownCities', and return their population according to Wikipedia
     * */
   def getCityPopulation(name: String): Int = {
-    ???
+    name match {
+      case "Paris" => 2206488
+      case "Tokyo" => 13622267
+      case "Munich" => 1548319
+      case "Montcuq" => 1241
+    }
   }
 
 
@@ -18,7 +23,12 @@ object Basics {
     * Return an empty string "" for unsupported types
     * */
   def getTypeInFrench(value: Any): String = {
-    ???
+    value match {
+      case _: Int => "Entier"
+      case _: String => "Chaîne"
+      case _: Boolean => "Booléen"
+      case _: Float => "Flotant"
+    }
   }
 
 
@@ -30,7 +40,13 @@ object Basics {
     * Oh wait, finally, we don't handle negative numbers, if it is negative, return "negative"
     * */
   def numbersAndPrimes(number: Int): String = {
-    ???
+    number match {
+      case 2 | 3 | 5 | 7 | 11 => "prime"
+      case 0 => "zero"
+      case n if n >= 10 => "large"
+      case n if n < 10 && n > 0 => "small"
+      case _ => "negative"
+    }
   }
 
 
@@ -49,7 +65,14 @@ object Basics {
     * By default... is there a default case ?
     * */
   def composeColors(first: PrimaryColor, second: PrimaryColor): Color = {
-    ???
+    (first, second) match {
+      case (Red, Blue) | (Blue, Red) => Magenta
+      case (Red, Green) | (Green, Red) => Yellow
+      case (Green, Blue) | (Blue, Green) => Cyan
+      case (Red, Red) => Red
+      case (Blue, Blue) => Blue
+      case (Green, Green) => Green
+    }
   }
 
 
@@ -73,6 +96,11 @@ object Basics {
     * Else, return 'Allow'
     * */
   def detectMalicious(user: User): Decision = {
-    ???
+    user match {
+      case User(_, Scammer, _) => Deny
+      case User(_, Robot, _) => Deny
+      case User(_, Suspect, Some(ip)) if ip > 10 => Deny
+      case _ => Allow
+    }
   }
 }

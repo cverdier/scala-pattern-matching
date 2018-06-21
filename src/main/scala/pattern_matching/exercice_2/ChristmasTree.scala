@@ -1,4 +1,4 @@
-package exercice_2
+package pattern_matching.exercice_2
 
 sealed trait Decoration { def price: Int }
 case object Ball extends Decoration { override val price: Int = 10 }

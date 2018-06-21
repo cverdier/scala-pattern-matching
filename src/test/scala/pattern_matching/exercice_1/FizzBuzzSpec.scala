@@ -1,4 +1,4 @@
-package exercice_1
+package pattern_matching.exercice_1
 
 import org.scalatest.{Matchers, WordSpec}
 

@@ -1,4 +1,4 @@
-package exercice_0
+package pattern_matching.exercice_0
 
 object Basics {
 

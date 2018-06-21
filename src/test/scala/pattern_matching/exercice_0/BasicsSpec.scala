@@ -1,6 +1,6 @@
-package exercice_0
+package pattern_matching.exercice_0
 
-import exercice_0.Basics._
+import pattern_matching.exercice_0.Basics._
 import org.scalatest.{Matchers, WordSpec}
 
 class BasicsSpec extends WordSpec with Matchers {

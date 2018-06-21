@@ -20,10 +20,13 @@ object Movies {
     movies.filter(_.director == director)
 
   case class MovieRelease(name: String, releaseYear: Int)
+
   /**
     * Return MovieRelease for each Movie in the list, sort by release year (ascending)
     */
-  def getSortedMovieReleases(movies: List[Movie]): List[MovieRelease] = ???
+  def getSortedMovieReleases(movies: List[Movie]): List[MovieRelease] =
+    movies.map(movie => MovieRelease(movie.name, movie.releaseYear))
+    .sortBy(_.releaseYear)
 
   /**
     * Return a list of movies matching all given predicates

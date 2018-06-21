@@ -16,8 +16,8 @@ object Movies {
   /**
     * Return movies directed by the given director
     */
-  def getMoviesMadeBy(movies: List[Movie], director: Director): List[Movie] = ???
-
+  def getMoviesMadeBy(movies: List[Movie], director: Director): List[Movie] =
+    movies.filter(_.director == director)
 
   case class MovieRelease(name: String, releaseYear: Int)
   /**

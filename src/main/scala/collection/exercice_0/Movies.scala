@@ -31,7 +31,9 @@ object Movies {
   /**
     * Return a list of movies matching all given predicates
     */
-  def getMoviesWithMultipleFilters(movies: List[Movie])(filters: List[Movie => Boolean]): List[Movie] = ???
+  def getMoviesWithMultipleFilters(movies: List[Movie])(filters: List[Movie => Boolean]): List[Movie] =
+    movies.filter(movie =>
+      filters.forall(_(movie)))
 
   /**
     * Return a discount for each movie according to the following rules:
